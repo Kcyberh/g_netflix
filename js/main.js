@@ -85,10 +85,14 @@ function discoverMovies(){
             div.appendChild(desc);
             div.appendChild(yearText);
            div.appendChild(button);
+          
             div.className = "card shadow border rounded m-4 p-4 w-25";
             section.className ="d-flex flex-wrap justify-content-center";
             section.appendChild(div);
-
+ function onClick(button){
+   window.location="detailsPage.html?id="+ results[i]["id"] ;
+ }
+ button.addEventListener('click',onClick);
          }
          console.log(response["results"])
       }
