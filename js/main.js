@@ -68,6 +68,7 @@ function discoverMovies(){
       .then(response => {
          const results = response["results"];
          for (let i = 0; i < 20; i++){
+           const button = document.createElement('button');
             const div = document.createElement('div');
             const h4 = document.createElement('h4');
             const img = document.createElement('img');
@@ -77,11 +78,13 @@ function discoverMovies(){
             img.src = "https://image.tmdb.org/t/p/w500" + results[i]["poster_path"];
             desc.innerText = results[i]["overview"];
             yearText.innerText = results[i]["release_date"];
+            button.innerText ="View all";
 
             div.appendChild(img);
             div.appendChild(h4);
             div.appendChild(desc);
             div.appendChild(yearText);
+           div.appendChild(button);
             div.className = "card shadow border rounded m-4 p-4 w-25";
             section.className ="d-flex flex-wrap justify-content-center";
             section.appendChild(div);
