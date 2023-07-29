@@ -52,7 +52,7 @@ function loadData(){
      
    })
  }
-loadData();
+//loadData();
 
 function discoverMovies(){
    const options = {
@@ -67,14 +67,14 @@ function discoverMovies(){
       .then(response => response.json())
       .then(response => {
          const results = response["results"];
-         for (let i = 0; i < response.length; i++){
+         for (let i = 0; i < 20; i++){
             const div = document.createElement('div');
             const h4 = document.createElement('h4');
             const img = document.createElement('img');
             const desc = document.createElement('p');
             const yearText = document.createElement('p');
             h4.innerText =results[i]["title"];
-            img.src = "https://imag.tmdb.org/t/p/w500" + results[i]["poster_path"];
+            img.src = "https://image.tmdb.org/t/p/w500" + results[i]["poster_path"];
             desc.innerText = results[i]["overview"];
             yearText.innerText = results[i]["release_date"];
 
@@ -82,6 +82,8 @@ function discoverMovies(){
             div.appendChild(h4);
             div.appendChild(desc);
             div.appendChild(yearText);
+            div.className = "card shadow border rounded m-4 p-4 w-25";
+            section.className ="d-flex flex-wrap justify-content-center";
             section.appendChild(div);
 
          }
@@ -90,3 +92,4 @@ function discoverMovies(){
       )
       .catch(err => console.error(err));
 }
+discoverMovies();
