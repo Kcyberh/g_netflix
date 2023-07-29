@@ -99,4 +99,6 @@ function discoverMovies(){
       )
       .catch(err => console.error(err));
 }
+
+
 discoverMovies();
