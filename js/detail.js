@@ -31,8 +31,7 @@ function getMovieDetail(){
              div.appendChild(yearText);
             div.appendChild(button);
            
-             div.className = "card shadow border rounded m-4 p-4 w-25";
-             section.className ="d-flex flex-wrap justify-content-center";
+             
              section.appendChild(div);
           }
           console.log(response["results"])
