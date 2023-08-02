@@ -74,11 +74,13 @@ function discoverMovies(){
             const img = document.createElement('img');
             const desc = document.createElement('p');
             const yearText = document.createElement('p');
+            const id = document.createElement("p");
             h4.innerText =results[i]["title"];
             img.src = "https://image.tmdb.org/t/p/w500" + results[i]["poster_path"];
             desc.innerText = results[i]["overview"];
             yearText.innerText = results[i]["release_date"];
-            button.innerText ="View all";
+            button.innerText ="View ";
+            id.innerText = results[i]["id"];
 
             div.appendChild(img);
             div.appendChild(h4);
@@ -90,7 +92,7 @@ function discoverMovies(){
             section.className ="d-flex flex-wrap justify-content-center";
             section.appendChild(div);
  function onClick(button){
-   window.location="detailsPage.html?id="+ results[i]["id"] ;
+   window.location="detailsPage.html?id="+ results[i]["id"];
  }
  button.addEventListener('click',onClick);
          }
